@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>自制网页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="nangao.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="animate.js"></script>
+	<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			a{
+				text-decoration:none;
+			}
+			ul,li{
+				list-style:none;
+			}
+			/* 飘动 */
+			#boxaa{
+			    width: 100px;
+			    height: 100px;
+			    position: absolute;
+			    left: 50%;
+			    top: 50%;
+			    z-index:100000;
+			}
+			html,body{
+			    height: 100%;
+			}
+			.piaodonglogo{
+				width: 60px;
+				height: 60px;
+				z-index:100000;
+			}
+			/*头部*/
+			.header-wrap{
+				width:100%;
+				height:30px;
+				background-color:rgb(244,244,244);
+				border:1px solid rgb(236,236,236);
+			}
+			.header{
+				width:1200px;
+				height:30px;
+				margin:0 auto;
+			}
+			.p1{
+				float:left;
+				color:rgb(51,51,51);
+				font-size:14px;
+				font-family: 微软雅黑;
+				height:30px;
+				line-height:30px;
+			}
+			.p2{
+				float:right;
+			color: #0da0b4;;
+				font-size:14px;
+				font-family:微软雅黑;
+				height:30px;
+				line-height:30px;
+			}
+			.tu1 img{
+				float:left;
+				margin:8px 5px 0px 12px;
+			}
+			.header a{
+				color:rgb(51,51,51);
+				font-size:14px;
+				font-family:微软雅黑;
+			}
+			.a1{
+				margin-right:12px;
+			}
+			/*头部与导航之间*/
+			.bet{
+				margin:0 auto;
+				position:relative;
+				background-image: url('tu/shangtu.jpg');
+				width:100%;
+				height:120px;
+			}
+			.pic1{
+				float:left;
+				margin:25px 0 0 0px;
+				position: relative;
+				top: 20px;
+			}
+			.inp1 input{
+				width:405px;
+				height:40px;
+				position:absolute;
+				left:382px;
+				top:38px;
+				border:none 0;
+				border:2px solid rgb(248,56,56);
+				font-size:14px;
+				color:rgb(188,188,188);
+				margin:0px;
+				text-indent:20px;
+				font-family:微软雅黑;
+			}
+			.inp2 input{
+				width:95px;
+				height:44px;
+				position:absolute;
+				left:790px;
+				top:38px;
+				border:none 0;
+				border:2px solid rgb(248,56,56);
+				background-color:rgb(248,56,56); 
+				font-size:16px;
+				color:rgb(255,255,255);
+				margin:0px;
+				text-align:center;
+				font-family:微软雅黑;
+			}
+			.shop{
+				width:150px;
+				height:40px;
+				line-height:40px;
+				position:absolute;
+				left:1050px;
+				top:40px;
+				background-color:rgb(245,245,245);
+				font-size:14px;
+				font-family:微软雅黑;
+				border:1px solid rgb(227,227,227);
+			}
+			.bet img{
+				float:left;
+				margin:10px 5px 10px 25px;
+			}
+			#red1{
+				color:rgb(248,56,56);
+			}
+			/*导航*/
+			.nav1-wrap{
+				width:100%;
+				border-bottom:0px solid ;
+			}
+			.nav1 ul{
+				width:1200px;
+				height:35px;
+				margin:0 auto;
+			}
+			.nav1 li{
+				width:90px;
+				height:33px;
+				display: inline-block;
+				line-height: 33px;
+				text-align:center;
+				margin:0px 0px 3px 25px;
+				border-radius:4px/4px;
+			}
+			.nav1 li:hover{
+				background-color:rgb(253,3,4);
+			}
+			.nav1 li:hover a{
+				color:#fff;
+			}
+			.nav1 a{
+				font-family:微软雅黑;
+				color:#FF9900;
+				font-size: 18px;
+				letter-spacing: 1px;
+			}
+			
+			/*主体*/
+			.dabu{
+				position: relative;
+				top: 30px;
+				margin: 0 auto;
+			}
+			.dabu>div{
+				float: left;
+				margin-top: 0;
+				width: 200px;
+				height: 250px;
+				margin-left: 40px;
+				background:#FBFAC6;
+				box-shadow:0px 2px 5px 0px #FFD700;
+			}
+			.dabuziti{
+				margin: 0 auto;
+				line-height:25px;
+				margin-left:24px;
+				margin-top:10px;;
+				font-size:18px;
+				font-family:Microsoft YaHei;
+				font-weight:400;
+				color:#050505;
+			}
+			/*底部*/
+			.footer-wrap{
+				float:left;
+				width:100%;
+				height:251px;
+				background-color:rgb(46,46,46);
+				margin-top: 40px;
+			}
+			.footer1{
+				width:1200px;
+				height:150px;
+				margin:0 auto;
+				border-bottom:1px solid rgb(69,69,69);
+			}
+			.footer1 ul{
+				float:left;
+				display:inline-block;
+				border:none;
+			}
+			.foot1{
+				width:84px;
+				line-height:30px;
+				margin:15px 0px 15px 0px;
+			}
+			.foot2{
+				width:84px;
+				line-height:30px;
+				margin:15px 195px 15px 0px;
+			}
+			.footer1 li>a{
+				font-size:14px;
+				font-family:微软雅黑;
+				font-weight:lighter;
+				color:rgb(255,255,255);
+			}
+			#ziti{
+				margin-bottom:5px;
+			}
+			#ziti>a{
+				margin-bottom:10px;
+				font-size:16px;
+				font-family:微软雅黑;
+				font-weight:lighter;
+				color:rgb(255,255,255);
+			}
+			.footer2{
+				
+				width:1200px;
+				height:100px;
+				border-bottom:1px solid rgb(69,69,69);
+				margin:0 auto;
+			}
+			.foot3{
+				float:left;
+				width:1200px;
+				font-size:14px;
+				font-family:微软雅黑;
+				font-weight:lighter;
+				color:rgb(158,158,158);
+				margin:20px 0px 20px 320px;
+			}
+			.foot3 a{
+				font-size:14px;
+				font-family:微软雅黑;
+				font-weight:lighter;
+				color:rgb(158,158,158);
+			}
+
+			.foot4{
+				margin:0px 0px 0px 320px;
+				font-size:14px;
+				font-family:微软雅黑;
+				font-weight:lighter;
+				color:rgb(158,158,158);
+			}
+			.body{
+				overflow-x: hidden;
+			}
+			.huodongtongzhi{
+				width: 1300px;
+				height: 50px;
+				border-style: solid;
+				margin-left: 100px;
+				position: relative;
+				top:50px;
+				border-color: white;
+			}
+			.huodongtongzhi1{
+				width: 450px;
+				font-size: 20px;
+				color: red;
+				position: relative;
+				left: 0;
+				font-weight: lighter;
+			}
+		</style>
+	</style>
+</head>
+<body class="body">
+	<!-- 飘动 -->
+	<div id="boxaa"><img src="tu/logo.jpg" class="piaodonglogo"></div>
+	<!-- 头部 -->
+	<div class="header-wrap">
+		<div class="header">
+			<p class="p1">
+				<a href="#" class="a1">我的青春</a>
+				<a herf="#" class="a1">LOL2012-2020</a>
+			</p>
+			<p class="p2">
+				<a href="#" class="a1">扫描加入</a>
+				敌军还有30s到达
+				<a href="#">&nbsp&nbsp&nbsp登录</a> 
+				<a href="#">&nbsp&nbsp&nbsp注册</a>
+			</p>
+		</div>
+	</div>
+	<!-- 头部与导航之间 -->
+	<div class="bet">
+		<img class="pic1" src="logo.png" alt="LOL">
+		<form>
+			<div class="inp1">
+				<input type="text"  value="请输入英雄名称或皮肤名">
+			</div>
+			<div class="inp2">
+				<input type="button" value="搜索">
+			</div>
+		</form>
+		<div class="shop">
+			<img src="购物车.png" alt="购物车">
+			手办购物车(<span id="red1">0</span>)件
+		</div>	
+	</div>
+	<!-- 导航 -->
+	<div class="nav1-wrap">
+		<div class="nav1">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">游戏资料</a></li>
+				<li><a href="#">大神视频</a></li>
+				<li><a href="#">比赛信息</a></li>
+				<li><a href="#">周边商城</a></li>
+				<li><a href="#" style="color:#3333FF;">自助系统</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- js活动通知 -->
+	<div class="huodongtongzhi">
+		<div class="huodongtongzhi1" id="hdtz1">活动通知:恕瑞玛欢迎老用户回归</div>
+	</div>
+	<span class="huodong"></span>
+
+	<div class="box" id="box">
+		<div class="slider" id="slider">
+			<div class="slide"><img src="banner图/u=2493243242,1572505589&fm=15&gp=0.jpg" alt=""></div>
+			<div class="slide"><img src="banner图/u=4199781611,2714247246&fm=26&gp=0.jpg" alt=""></div>
+			<div class="slide"><img src="banner图/u=77726740,1180013320&fm=15&gp=0.jpg" alt=""></div>
+			<div class="slide"><img src="banner图/u=893569693,2996442742&fm=26&gp=0.jpg" alt=""></div>
+			<div class="slide"><img src="banner图/下载 (1).jpg" alt=""></div>
+			<div class="slide"><img src="banner图/下载.jpg" alt=""></div>
+			<div class="slide"><img src="banner图/u=4199781611,2714247246&fm=26&gp=0.jpg" alt=""></div>
+		</div>
+		<ul class="nav" id="nav">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- 主体 -->
+	<div class="dabu">
+		<div style="margin-left:60px;" id="diyi">
+			<img src="tu/xiaoxiaoyingxiong.jpg">
+			<p class="dabuziti">小小英雄第四系列</p>
+		</div>
+		<div id="second">
+			<img src="tu/yuhangyuan.jpg">
+			<p class="dabuziti">宇航员2020</p>
+		</div>
+		<div id="third">
+			<img src="tu/weilaizhanshi.jpg">
+			<p class="dabuziti">未来战士</p>
+		</div>
+		<div id="fourth">
+			<img src="tu/anjing.jpg">
+			<p class="dabuziti">黯晶2020</p>
+		</div>
+		<div id="fifth">
+			<img src="tu/yongjiupifu.jpg">
+			<p class="dabuziti">解锁冠军荣耀宝箱</p>
+		</div>
+		<div id="diliu">
+			<img src="tu/wuxianhuoli.jpg">
+			<p class="dabuziti">无限火力限时开放</p>
+		</div>
+	</div>	
+	<br>
+	<div class="dabu">
+		<div style="margin-top: 20px;margin-left: 60px;">
+			<img src="tu/xiaoxiaoyingxiong.jpg">
+			<p class="dabuziti">小小英雄第四系列</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/yuhangyuan.jpg">
+			<p class="dabuziti">宇航员2020</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/weilaizhanshi.jpg">
+			<p class="dabuziti">未来战士</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/anjing.jpg">
+			<p class="dabuziti">黯晶2020</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/yongjiupifu.jpg">
+			<p class="dabuziti">解锁冠军荣耀宝箱</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/wuxianhuoli.jpg">
+			<p class="dabuziti">无限火力限时开放</p>
+		</div>
+	</div>
+	<br>
+	<div class="dabu">
+		<div style="margin-top: 20px;margin-left: 60px;">
+			<img src="tu/xiaoxiaoyingxiong.jpg">
+			<p class="dabuziti">小小英雄第四系列</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/yuhangyuan.jpg">
+			<p class="dabuziti">宇航员2020</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/weilaizhanshi.jpg">
+			<p class="dabuziti">未来战士</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/anjing.jpg">
+			<p class="dabuziti">黯晶2020</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/yongjiupifu.jpg">
+			<p class="dabuziti">解锁冠军荣耀宝箱</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/wuxianhuoli.jpg">
+			<p class="dabuziti">无限火力限时开放</p>
+		</div>
+	</div>
+	<br>
+	<div class="dabu">
+		<div style="margin-top: 20px;margin-left: 60px;">
+			<img src="tu/xiaoxiaoyingxiong.jpg">
+			<p class="dabuziti">小小英雄第四系列</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/yuhangyuan.jpg">
+			<p class="dabuziti">宇航员2020</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/weilaizhanshi.jpg">
+			<p class="dabuziti">未来战士</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/anjing.jpg">
+			<p class="dabuziti">黯晶2020</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/yongjiupifu.jpg">
+			<p class="dabuziti">解锁冠军荣耀宝箱</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/wuxianhuoli.jpg">
+			<p class="dabuziti">无限火力限时开放</p>
+		</div>
+	</div>
+	<br>
+	<div class="dabu">
+		<div style="margin-top: 20px;margin-left: 60px;">
+			<img src="tu/xiaoxiaoyingxiong.jpg">
+			<p class="dabuziti">小小英雄第四系列</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/yuhangyuan.jpg">
+			<p class="dabuziti">宇航员2020</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/weilaizhanshi.jpg">
+			<p class="dabuziti">未来战士</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/anjing.jpg">
+			<p class="dabuziti">黯晶2020</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/yongjiupifu.jpg">
+			<p class="dabuziti">解锁冠军荣耀宝箱</p>
+		</div>
+		<div style="margin-top: 20px;">
+			<img src="tu/wuxianhuoli.jpg">
+			<p class="dabuziti">无限火力限时开放</p>
+		</div>
+	</div>
+	<div class="footer-wrap">
+		<div class="footer">
+			<div class="footer1">
+				<ul class="foot2">
+					<li id="ziti"><a  href="#">新手上路</a></li>
+					<li><a href="#">游戏下载</a></li>
+					<li><a href="#">新手指引</a></li>
+					<li><a href="#">新手礼包</a></li>
+				</ul>
+				<ul class="foot2">
+					<li id="ziti"><a href="#">点券充值</a></li>
+					<li><a href="#">道具城</a></li>
+					<li><a href="#">充值优惠</a></li>
+					<li><a href="#">支付方式</a><li>
+				</ul>
+				<ul class="foot2">
+					<li id="ziti"><a href="#">官方社区</a></li>
+					<li><a href="#">视频中心</a></li>
+					<li><a href="#">官方论坛</a></li>
+					<li><a href="#">官方微信</a></li>
+				</ul>
+				<ul class="foot2" >
+					<li id="ziti"><a href="#">售后服务</a></li>
+					<li><a href="#">退换货原则</a></li>
+					<li><a href="#">售后服务保证</a></li>
+					<li><a href="#">换货流程</a></li>
+				</ul>
+				<ul class="foot1">
+					<li id="ziti"><a href="#">关于我们</a></li>
+					<li><a href="#">网络故障报告</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">投诉与建议</a></li>
+				</ul>	
+			</div>
+			<div class="footer2">
+				<p class="foot3">
+					<a href="#">以此作业纪念自己八年联盟经历,再见了我的青春,再见了我那些一起游戏的兄弟们.</a>&nbsp;|&nbsp;
+				</p>
+				<p class="foot4"> 
+				©2012-2020&nbsp;无悔青春&nbsp;版权所有,并保留所有权利。ICP备案证书号：zh制作于2020.6.8,盗版必究.
+				</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// 轮播图
+		function getStyle(obj,style){
+			if (obj.currentStyle) {
+				return obj.currentStyle[style];
+			}else{
+				return getComputedStyle(obj)[style];
+			}
+		}
+		var a=0;
+		var diyi=document.getElementById("diyi");
+		var second=document.getElementById("second");
+		var third=document.getElementById("third");
+		var fourth=document.getElementById("fourth");
+		var fifth=document.getElementById("fifth");
+		var diliu=document.getElementById("diliu");
+		setInterval(function(){
+			if (a==0) {
+				diyi.childNodes[1].src="tu/anjing.jpg";
+				second.childNodes[1].src="tu/wuxianhuoli.jpg";
+				third.childNodes[1].src="tu/weilaizhanshi.jpg";
+				fourth.childNodes[1].src="tu/weilaizhanshi.jpg";
+			}
+		}, 500);
+		var box = document.getElementById('box');
+		var oNavlist = document.getElementById('nav').children;
+		var slider = document.getElementById('slider');
+		var index = 1;
+		var timer;
+		var isMoving = false;
+		box.onmouseover = function(){
+			clearInterval(timer)
+		}
+		box.onmouseout = function(){
+			timer = setInterval(next, 3000);
+		}
+		for( var i=0; i<oNavlist.length; i++ ){
+			oNavlist[i].index = i;
+			oNavlist[i].onclick = function(){
+				index = this.index+1;
+				navmove();
+				animate(slider,{left:-1200*index});
+			}
+		}
+		function next(){
+			if(isMoving){
+				return;
+			}
+			isMoving = true;
+			index++;
+			navmove();
+			animate(slider,{left:-1200*index},function(){
+				if(index==6){
+					slider.style.left = '-1200px';
+					index = 1;
+				}
+				isMoving = false;
+			});
+		}
+		function prev(){
+			if(isMoving){
+				return;
+			}
+			isMoving = true;
+			index--;
+			navmove();
+			animate(slider,{left:-1200*index},function(){
+				if(index==0){
+					slider.style.left = '-6000px';
+					index = 5;
+				}
+				isMoving = false;
+			});
+		}
+		function navmove(){
+			for( var i=0; i<oNavlist.length; i++ ){
+				oNavlist[i].className = "";
+			}
+			if(index >5 ){
+				oNavlist[0].className = "active";
+			}else if(index<=0){
+				oNavlist[4].className = "active";
+			}else {
+				oNavlist[index-1].className = "active";
+			}
+		}
+		timer = setInterval(next, 3000);
+		// 活动通知
+		var hdtz1=document.getElementById("hdtz1");
+		var hdtz2=setInterval(function lundong(){
+			var now=parseInt(getStyle(hdtz1,"left"));
+			if (now==1000) {
+				hdtz1.style.left=0;
+				lundong();
+			}else{
+				hdtz1.style.left=now+1+"px";
+			}
+		},20);
+		// 飘动
+		var boxaa = document.getElementById('boxaa');
+		var maxTopa = document.body.clientHeight - 100;
+		var maxLefta = document.body.clientWidth - 100;
+		var speedYa = 2; 
+		var speedXa = 3; 
+		function movea(){
+		    var curLefta = parseInt( getStyle(boxaa,'left') );
+		    var curTopa = parseInt( getStyle(boxaa,'top') );
+
+		    if(curTopa > maxTopa || curTopa<0){
+		        speedYa = -speedYa;
+		    }
+		    if(curLefta > maxLefta || curLefta<0){
+		        speedXa = -speedXa;
+		    }
+		    boxaa.style.left = curLefta + speedXa + 'px';  
+		    boxaa.style.top = curTopa + speedYa + 'px';  
+
+		}
+		
+		var ida = setInterval(movea,50)
+
+		boxaa.onmouseout = function(){
+		    ida = setInterval(movea,50)
+		}
+		boxaa.onmouseover = function(){
+		    clearInterval(ida)
+		}
+		function getStyle(obj,attr){
+		    if(obj.currentStyle){
+		        return obj.currentStyle[attr];
+		    }else{
+		        return getComputedStyle(obj)[attr]
+		    }
+		}
+	</script>
+</body>
+</html>
